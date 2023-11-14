@@ -45,6 +45,11 @@ public class ManView extends javax.swing.JFrame {
         });
 
         jButton5.setText("Delete Dentist");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,6 +93,18 @@ public class ManView extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+            // Create an instance of ManagerView
+    Deleteman DeleteView = new Deleteman();
+
+    // Set ManagerView frame to visible
+    DeleteView.setVisible(true);
+
+    // Optionally, if you want to hide the current frame
+    // this.setVisible(false);
+
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

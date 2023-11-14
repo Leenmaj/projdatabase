@@ -79,14 +79,14 @@ public class DentistClinic extends javax.swing.JFrame {
 
     private void managerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerActionPerformed
                                           
-    // Create an instance of ManagerView
+    // Create an instance of ManagerViews
     ManView managerView = new ManView();
 
     // Set ManagerView frame to visible
     managerView.setVisible(true);
 
-    // Optionally, if you want to hide the current frame
-    // this.setVisible(false);
+   
+    this.setVisible(false);
 
 
        
