@@ -8,6 +8,9 @@ package dentistdatabase;
  *
  * @author l_alm
  */
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 public class DentistClinic extends javax.swing.JFrame {
 
     /**
