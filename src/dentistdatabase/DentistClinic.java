@@ -45,6 +45,11 @@ public class DentistClinic extends javax.swing.JFrame {
         });
 
         patient.setText("Patient");
+        patient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,6 +96,12 @@ public class DentistClinic extends javax.swing.JFrame {
 
        
     }//GEN-LAST:event_managerActionPerformed
+
+    private void patientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientActionPerformed
+      PView p = new PView();
+      p.setVisible(true);
+          this.setVisible(false);
+    }//GEN-LAST:event_patientActionPerformed
 
     /**
      * @param args the command line arguments
