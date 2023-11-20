@@ -419,7 +419,7 @@ public class PView extends javax.swing.JFrame {
         PreparedStatement pst = null;
         String url = "jdbc:mariadb://127.0.0.1:3306/dentistclinic"; 
         String user = "root"; 
-        String password = "";
+        String password ="";
         try { 
             con = DriverManager.getConnection(url, user, password); 
             String sql = "DELETE FROM appointment WHERE National_id = ? AND A_status = 'Cancelled' "; 
