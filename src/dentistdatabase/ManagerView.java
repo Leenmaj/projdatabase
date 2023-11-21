@@ -55,6 +55,12 @@ public class ManagerView extends javax.swing.JFrame {
             }
         });
 
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
         jLabel1.setText("Dentist ID");
 
         jLabel2.setText("First Name");
@@ -160,8 +166,8 @@ public class ManagerView extends javax.swing.JFrame {
             pst.setString(1, jTextField1.getText());
             pst.setString(2, jTextField2.getText()); 
             pst.setString(3, jTextField3.getText());
-            pst.setString(4, jTextField5.getText()); 
-            pst.setString(5, jTextField4.getText()); 
+            pst.setString(4, jTextField4.getText()); 
+            pst.setString(5, jTextField5.getText()); 
             pst.setString(6, jTextField6.getText()); 
             int rowsAffected = pst.executeUpdate(); 
             if (rowsAffected > 0) {
@@ -180,6 +186,10 @@ public class ManagerView extends javax.swing.JFrame {
             }
         }    
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -98,7 +98,7 @@ public class DentistClinic extends javax.swing.JFrame {
     }//GEN-LAST:event_managerActionPerformed
 
     private void patientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientActionPerformed
-      PView p = new PView();
+      patientsview p = new patientsview();
       p.setVisible(true);
           this.setVisible(false);
     }//GEN-LAST:event_patientActionPerformed
