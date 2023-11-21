@@ -177,7 +177,7 @@ public class updatePatient extends javax.swing.JFrame {
                     
                             break;
          case "last name":  
-                sql = "UPDATE patient SET FName = ? WHERE National_id = ?"; 
+                sql = "UPDATE patient SET LName = ? WHERE National_id = ?"; 
              pst = con.prepareStatement(sql);
 
        
@@ -186,7 +186,7 @@ public class updatePatient extends javax.swing.JFrame {
                                  
                             break;
          case "phone": 
-                 sql = "UPDATE patient SET Phone = ? WHERE National_id = ?"; 
+                 sql = "UPDATE patient SET Phone_Number = ? WHERE National_id = ?"; 
             
  pst = con.prepareStatement(sql);
        
