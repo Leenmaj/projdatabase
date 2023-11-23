@@ -40,6 +40,7 @@ public class RetriveMan extends javax.swing.JFrame {
         search = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDent = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,13 +75,28 @@ public class RetriveMan extends javax.swing.JFrame {
             new String [] {
                 "First Name", "Last Name"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblDent.setFocusable(false);
         tblDent.setGridColor(new java.awt.Color(0, 153, 100));
         tblDent.setInheritsPopupMenu(true);
         tblDent.setSelectionBackground(new java.awt.Color(178, 213, 213));
         tblDent.setShowGrid(false);
         jScrollPane2.setViewportView(tblDent);
+
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,7 +116,10 @@ public class RetriveMan extends javax.swing.JFrame {
                         .addComponent(search))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(176, 176, 176)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(350, 350, 350)
+                        .addComponent(jButton1)))
                 .addContainerGap(228, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -116,7 +135,9 @@ public class RetriveMan extends javax.swing.JFrame {
                         .addComponent(spec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(62, 62, 62)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jButton1)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,6 +185,14 @@ public class RetriveMan extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_searchActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+           this.toBack();
+      setVisible(false);
+      new ManView().toFront();
+      new ManView().setState(java.awt.Frame.NORMAL);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,6 +229,7 @@ public class RetriveMan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
