@@ -4,10 +4,11 @@
  */
 package dentistdatabase;
 
+import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
 /**
  *
  * @author l_alm
@@ -132,47 +133,18 @@ public class patientsview extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-  updateappointment up = new updateappointment();
+  updateapp2 up = new updateapp2();
        up.setVisible(true);
 
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-      Connection con = null;
-      PreparedStatement pst = null;
-      ResultSet resultSet = null;
-         
-      String url = "jdbc:mariadb://127.0.0.1:3306/dentistclinic"; 
-      String user = "root"; 
-      String password = "";
-      try{
-        con = DriverManager.getConnection(url, user, password);
-        String sql = "SELECT id, A_date, A_time, A_Status, DenId, PNational_Id " + 
-              "FROM appointment" +
-              "WHERE Id = ?";
-       // String sql = "SELECT * FROM appointment WHERE Id = ?";
-        pst = con.prepareStatement(sql); 
-        pst.setString(1, appointmentId.getText());
-        resultSet = pst.executeQuery();
-        DefaultTableModel model = (DefaultTableModel)  jTable1.getModel();
-        model.setRowCount(0);
-        while(resultSet.next()){
-        model.addRow(new String[] {
-        resultSet.getString(1),
-        resultSet.getString(2),
-        resultSet.getString(3),
-        resultSet.getString(4),
-        resultSet.getString(5),
-        resultSet.getString(6) });
-        }
-       }
-        catch(SQLException ex){
-         JOptionPane.showMessageDialog(this, "Error " + ex.getMessage());
-        }
+    
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+   deletefilepatient del = new deletefilepatient();
+   del.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     /**

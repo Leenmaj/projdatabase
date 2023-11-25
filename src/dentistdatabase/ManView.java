@@ -42,6 +42,11 @@ public class ManView extends javax.swing.JFrame {
         });
 
         jButton2.setText("Update Dentist Details");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Insert Dentist");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +104,7 @@ public class ManView extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
      // Create an instance of ManagerView
+      this.toBack();
     ManagerView managerView = new ManagerView();
 
     // Set ManagerView frame to visible
@@ -112,6 +118,7 @@ public class ManView extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
             // Create an instance of ManagerView
+             this.toBack();
     Deleteman DeleteView = new Deleteman();
 
     // Set ManagerView frame to visible
@@ -137,6 +144,13 @@ public class ManView extends javax.swing.JFrame {
         bill.setVisible(true);
        bill.toFront();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+ this.toBack();
+        updateDentist reMan = new updateDentist();
+        reMan.setVisible(true);
+        reMan.toFront();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -37,7 +37,6 @@ public class PView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -68,13 +67,6 @@ public class PView extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Delete File");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -178,7 +170,6 @@ public class PView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jButton1)))))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(379, Short.MAX_VALUE))
@@ -223,10 +214,7 @@ public class PView extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
+                    .addComponent(jButton6))
                 .addGap(23, 23, 23)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
@@ -273,36 +261,6 @@ public class PView extends javax.swing.JFrame {
         }
    
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-          Connection con = null;
-        PreparedStatement pst = null;
-        String url = "jdbc:mariadb://127.0.0.1:3306/dentistclinic"; 
-        String user = "root"; 
-        String password = "";
-        try { 
-            con = DriverManager.getConnection(url, user, password); 
-            String sql = "DELETE FROM patient WHERE National_id = ?"; 
-            pst = con.prepareStatement(sql); 
-            pst.setString(1, n.getText());
-        
-            int rowsAffected = pst.executeUpdate(); 
-            if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(this, "File Deleted successfully!");
-            } else {
-                JOptionPane.showMessageDialog(this, "Deletion failed. No rows affected.");
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Deletion failed: " + ex.getMessage());
-        } finally {
-            try {
-                if (pst != null) pst.close();
-                if (con != null) con.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this, "Error closing resources: " + ex.getMessage());
-            }
-        }  
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        Connection con = null;
@@ -395,7 +353,6 @@ public class PView extends javax.swing.JFrame {
     private javax.swing.JTextField f;
     private javax.swing.JTextField fn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
