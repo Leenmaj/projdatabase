@@ -4,6 +4,10 @@
  */
 package dentistdatabase;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 /**
  *
  * @author l_alm
@@ -82,7 +86,7 @@ public class patientsview extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(363, Short.MAX_VALUE)
+                .addContainerGap(317, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -90,7 +94,7 @@ public class patientsview extends javax.swing.JFrame {
                     .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
-                .addGap(312, 312, 312))
+                .addGap(358, 358, 358))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +138,37 @@ public class patientsview extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+      Connection con = null;
+      PreparedStatement pst = null;
+      ResultSet resultSet = null;
+         
+      String url = "jdbc:mariadb://127.0.0.1:3306/dentistclinic"; 
+      String user = "root"; 
+      String password = "";
+      try{
+        con = DriverManager.getConnection(url, user, password);
+        String sql = "SELECT id, A_date, A_time, A_Status, DenId, PNational_Id " + 
+              "FROM appointment" +
+              "WHERE Id = ?";
+       // String sql = "SELECT * FROM appointment WHERE Id = ?";
+        pst = con.prepareStatement(sql); 
+        pst.setString(1, appointmentId.getText());
+        resultSet = pst.executeQuery();
+        DefaultTableModel model = (DefaultTableModel)  jTable1.getModel();
+        model.setRowCount(0);
+        while(resultSet.next()){
+        model.addRow(new String[] {
+        resultSet.getString(1),
+        resultSet.getString(2),
+        resultSet.getString(3),
+        resultSet.getString(4),
+        resultSet.getString(5),
+        resultSet.getString(6) });
+        }
+       }
+        catch(SQLException ex){
+         JOptionPane.showMessageDialog(this, "Error " + ex.getMessage());
+        }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
