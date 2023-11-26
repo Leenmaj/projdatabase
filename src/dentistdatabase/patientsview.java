@@ -53,7 +53,7 @@ public class patientsview extends javax.swing.JFrame  {
             }
         });
 
-        jButton10.setText("Update Appointment information");
+        jButton10.setText("Update Appointment Status");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -118,13 +118,14 @@ public class patientsview extends javax.swing.JFrame  {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-  updateapp2 up = new updateapp2();
+  updateStatus up = new updateStatus();
        up.setVisible(true);
 
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-    
+DisplayAppINFO D = new DisplayAppINFO();
+D.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
