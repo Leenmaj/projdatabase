@@ -9,11 +9,8 @@ package dentistdatabase;
  *
  * @author l_alm
  */
-import java.sql.DriverManager;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
 import javax.swing.JOptionPane;
-import java.sql.SQLException;
 public class ManagerView extends javax.swing.JFrame {
 
     /**

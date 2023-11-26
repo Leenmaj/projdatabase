@@ -109,7 +109,7 @@ public class ManView extends javax.swing.JFrame {
 
     // Set ManagerView frame to visible
     managerView.setVisible(true);
-
+managerView.toFront();
     // Optionally, if you want to hide the current frame
     // this.setVisible(false);
 
@@ -123,7 +123,7 @@ public class ManView extends javax.swing.JFrame {
 
     // Set ManagerView frame to visible
     DeleteView.setVisible(true);
-
+DeleteView.toFront();
     // Optionally, if you want to hide the current frame
     // this.setVisible(false);
 
