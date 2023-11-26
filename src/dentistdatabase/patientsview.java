@@ -19,7 +19,7 @@ public class patientsview extends javax.swing.JFrame {
      * Creates new form patientsview
      */
     public patientsview() {
-        initComponents();
+     initComponents();
     }
 
     /**
@@ -119,8 +119,8 @@ public class patientsview extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       updatePatient up = new updatePatient();
-       up.setVisible(true);
+     updatePatient up = new updatePatient();
+     up.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -128,23 +128,24 @@ public class patientsview extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
- PView p = new PView();
- p.setVisible(true);
+     PView p = new PView();
+     p.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-  updateapp2 up = new updateapp2();
-       up.setVisible(true);
+     updateapp2 up = new updateapp2();
+     up.setVisible(true);
 
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-    
+     DisplayAppINFO D = new DisplayAppINFO();
+     D.setVisible(true);    
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-   deletefilepatient del = new deletefilepatient();
-   del.setVisible(true);
+     deletefilepatient del = new deletefilepatient();
+     del.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
