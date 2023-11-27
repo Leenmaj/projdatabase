@@ -140,7 +140,8 @@ public class DisplayAppINFO extends javax.swing.JFrame {
       String password = "";
       try{
         con = DriverManager.getConnection(url, user, password);
-        String sql = "SELECT A.A_date, A.A_time, D.FirstName, A.A_status, B.Payment_amount,B.Status FROM Appointment AS A, Dentist AS D, Bill AS B WHERE B.AppID = A.id  AND A.DenId = D.DentistID AND  A.PNational_id = ?";
+        String sql = "SELECT A.A_date, A.A_time, D.FirstName, A.A_status, B.Payment_amount,B.Status"
+                + " FROM Appointment AS A, Dentist AS D, Bill AS B WHERE B.AppID = A.id  AND A.DenId = D.DentistID AND  A.PNational_id = ?";
         
         // String sql = "SELECT id, A_date, A_time, A_Status, DenId, PNational_Id FROM appointment WHERE Id = ?";
         pst = con.prepareStatement(sql); 

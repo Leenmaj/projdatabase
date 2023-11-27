@@ -150,7 +150,8 @@ public class retrieveBill extends javax.swing.JFrame {
            try{
           con = DriverManager.getConnection(url, user, password);
           
-          String sql = "SELECT b.Bill_id, b.Status,b.Date  ,b.Payment_amount , p.Fname , p.Lname From  appointment AS a, bill AS b, patient  AS p   WHERE  b.AppID = a.Id  AND P.National_ID = a.PNational_id  AND a.DenId = ?";
+  String sql = "SELECT b.Bill_id, b.Status,b.Date  ,b.Payment_amount , p.Fname , p.Lname From  appointment AS a,"
+          +" bill AS b, patient  AS p   WHERE  b.AppID = a.Id  AND P.National_ID = a.PNational_id  AND a.DenId = ?";
           pst = con.prepareStatement(sql); 
            pst.setString(1, Denid.getText());
           resultSet = pst.executeQuery();
